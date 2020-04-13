@@ -13,84 +13,114 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\Hash">
+      <UniqueIdentifier>{9bca5fab-2afe-4d15-8b55-56169b237c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FlowTable">
+      <UniqueIdentifier>{7748e0e7-3023-429e-a6f1-23823aeeb05f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Common">
+      <UniqueIdentifier>{d78a8823-56ea-4079-bfc8-7911dcb20167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\View">
+      <UniqueIdentifier>{585ca225-6561-4355-859f-7532a36e36f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Cache">
+      <UniqueIdentifier>{0372d1ec-9b5c-4245-8597-89b3fea6e2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Cache">
+      <UniqueIdentifier>{ae2bf1a8-dc1a-4bca-bf2f-90dded732a1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Common">
+      <UniqueIdentifier>{d07c1ddf-682a-4103-a377-6c07203facde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\View">
+      <UniqueIdentifier>{082af3ce-b2bb-4b31-a93e-82a6577512db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Hash">
+      <UniqueIdentifier>{125d5dbb-2cc1-4018-86f0-ddbcc95e0ef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FlowTable">
+      <UniqueIdentifier>{c3b9d1ae-22fa-4c5f-9bc9-7ed1c79c64bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FlowTableNaiveModel.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="FlowTableNaiveModelDlg.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="uniform.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="HashTable.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="HashList.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="HashFunctions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="PacketLookup.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="HashFunction.h">
+      <Filter>头文件\Hash</Filter>
     </ClInclude>
-    <ClInclude Include="FlowCache.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="HashFunctions.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="HashList.h">
+      <Filter>头文件\FlowTable</Filter>
+    </ClInclude>
+    <ClInclude Include="HashTable.h">
+      <Filter>头文件\FlowTable</Filter>
+    </ClInclude>
+    <ClInclude Include="uniform.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="FlowTableNaiveModel.h">
+      <Filter>头文件\View</Filter>
+    </ClInclude>
+    <ClInclude Include="FlowTableNaiveModelDlg.h">
+      <Filter>头文件\View</Filter>
     </ClInclude>
     <ClInclude Include="SegmentCache.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="FlowCache.h">
+      <Filter>头文件\Cache</Filter>
     </ClInclude>
     <ClInclude Include="AbstractFlowCache.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Cache</Filter>
     </ClInclude>
-    <ClInclude Include="HashFunction.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FlowTableNaiveModel.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="FlowTableNaiveModelDlg.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="HashTable.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="HashList.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="HashFunctions.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="PacketLookup.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SegmentCache.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Cache</Filter>
     </ClCompile>
     <ClCompile Include="AbstractFlowCache.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="FlowTableNaiveModelDlg.cpp">
+      <Filter>源文件\View</Filter>
+    </ClCompile>
+    <ClCompile Include="FlowTableNaiveModel.cpp">
+      <Filter>源文件\View</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="HashFunctions.cpp">
+      <Filter>源文件\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="HashList.cpp">
+      <Filter>源文件\FlowTable</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTable.cpp">
+      <Filter>源文件\FlowTable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
