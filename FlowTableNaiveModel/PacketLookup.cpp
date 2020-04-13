@@ -59,6 +59,7 @@ bool PacketLookup::Initialize(const UserConfig & info) {
 }
 
 void PacketLookup::LookupTestProc(const UserConfig & info) {
+
 	bool blSuccess = Initialize(info);
 	if (!blSuccess)
 	{

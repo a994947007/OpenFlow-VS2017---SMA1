@@ -10,19 +10,59 @@ ULONG SegmentCache::FindFlow(const FlowID& fid, const Time& t, PFlow& pFlow) {
 	ULONG len = 0;
 	UCHAR buf[FID_LEN];
 	((FlowID*)&fid)->ToData(buf);
-	ULONG ulFidHash = BOB(buf, FID_LEN);
-	//查找缓存
-	for (int m = 0; m < sizeof(ulFidHash); m++) {
-		UCHAR pos = (ulFidHash >> (m * 8)) & 0xff;
-		len++;
-		for (ULONG i = 0; i < COL_NUM; i++)
-		{
-			if (ulFidHash == cacheEntry[pos][i].sign) {
-				pFlow = cacheEntry[pos][i].entry;
-				cacheEntry[pos][i].time = t;		//找到则更新时间
+	u8 * result = new u8[SEG_NUM * SEG_SIZE];
+	hashFunction->compute(buf, FID_LEN, result);
+	ULONG sign = BOB(buf, FID_LEN);		//计算签名
+	for (ULONG m = 0; m < SEG_NUM; m++) {
+		//计算哈希结果对应的索引值大小
+		u32 pos = 0x0;
+		for (ULONG i = 0; i < SEG_SIZE; i++) {
+			pos |= result[m * SEG_SIZE + i];
+			pos <<= (i + 1);
+		}
+		//查找缓存
+		for (ULONG j = 0; j < COL_NUM; j++) {
+			len++;
+			if (sign == cacheTable[pos][j].sign) {
+				pFlow = cacheTable[pos][j].entry;
+				cacheTable[pos][j].time = t;		//找到则更新时间
 				break;
 			}
 		}
 	}
+	return len;
+}
+
+
+ULONG SegmentCache::InsertFlow(const FlowID& fid, const Time& t, PFlow pFlow) {
+	ULONG len = 0;
+	UCHAR buf[FID_LEN];
+	((FlowID*)&fid)->ToData(buf);
+	ULONG sign = BOB(buf, FID_LEN);
+	u8* result = new u8[SEG_NUM * SEG_SIZE];
+	hashFunction->compute(buf, FID_LEN, result);
+	u32 insertRow = 0x0;
+	u32 insertCol = 0x0;
+	for (int m = 0; m < SEG_NUM; m++) {
+		//计算哈希结果对应的索引值大小
+		u32 pos = 0x0;
+		for (ULONG i = 0; i < SEG_SIZE; i++) {
+			pos |= result[m * SEG_SIZE + i];
+			pos <<= (i + 1);
+		}
+		insertRow = pos;
+		if (m == 0) continue;
+		//寻找最久未使用的项
+		for (ULONG j = 0; j < COL_NUM; j++) {
+			len++;
+			if (cacheTable[pos][j].time < cacheTable[insertRow][insertCol].time) {
+				insertRow = pos;
+				insertCol = j;
+			}
+		}
+	}
+	cacheTable[insertRow][insertCol].sign = sign;
+	cacheTable[insertRow][insertCol].entry = pFlow;
+	cacheTable[insertRow][insertCol].time = t;
 	return len;
 }

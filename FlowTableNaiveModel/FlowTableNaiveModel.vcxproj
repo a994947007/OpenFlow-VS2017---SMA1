@@ -187,6 +187,7 @@
     <ClInclude Include="FlowCache.h" />
     <ClInclude Include="FlowTableNaiveModel.h" />
     <ClInclude Include="FlowTableNaiveModelDlg.h" />
+    <ClInclude Include="HashFunction.h" />
     <ClInclude Include="HashFunctions.h" />
     <ClInclude Include="HashList.h" />
     <ClInclude Include="HashTable.h" />

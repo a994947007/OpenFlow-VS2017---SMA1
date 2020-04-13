@@ -40,7 +40,7 @@ protected:
 	//当前缓存中已经存在的缓存项数
 	ULONG m_ulCurNum;
 	//缓存表
-	CacheEntry** cacheEntry;
+	CacheEntry** cacheTable;
 
 protected:
 	AbstractFlowCache(ULONG,ULONG);
