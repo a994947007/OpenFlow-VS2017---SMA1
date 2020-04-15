@@ -192,9 +192,12 @@
     <ClInclude Include="HashList.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="cmd5.h" />
+    <ClInclude Include="MD5.h" />
     <ClInclude Include="PacketLookup.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SegmentCache.h" />
+    <ClInclude Include="SegmentHashFunction.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="uniform.h" />
@@ -207,8 +210,10 @@
     <ClCompile Include="HashList.cpp" />
     <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="MD5.cpp" />
     <ClCompile Include="PacketLookup.cpp" />
     <ClCompile Include="SegmentCache.cpp" />
+    <ClCompile Include="SegmentHashFunction.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -34,14 +34,14 @@
     <Filter Include="源文件\Common">
       <UniqueIdentifier>{d07c1ddf-682a-4103-a377-6c07203facde}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\View">
-      <UniqueIdentifier>{082af3ce-b2bb-4b31-a93e-82a6577512db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Hash">
       <UniqueIdentifier>{125d5dbb-2cc1-4018-86f0-ddbcc95e0ef9}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\FlowTable">
       <UniqueIdentifier>{c3b9d1ae-22fa-4c5f-9bc9-7ed1c79c64bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\View">
+      <UniqueIdentifier>{082af3ce-b2bb-4b31-a93e-82a6577512db}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +90,15 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
+    <ClInclude Include="cmd5.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="SegmentHashFunction.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PacketLookup.cpp">
@@ -121,6 +130,12 @@
     </ClCompile>
     <ClCompile Include="HashTable.cpp">
       <Filter>源文件\FlowTable</Filter>
+    </ClCompile>
+    <ClCompile Include="MD5.cpp">
+      <Filter>源文件\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="SegmentHashFunction.cpp">
+      <Filter>源文件\Hash</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

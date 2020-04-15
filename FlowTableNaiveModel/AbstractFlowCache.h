@@ -2,7 +2,9 @@
 
 #include "uniform.h"
 #include "FlowCache.h"
-
+/**
+*	»º´æµÄ³éÏóÀà
+*/
 class AbstractFlowCache : public FlowCache
 {
 protected:
@@ -23,7 +25,7 @@ protected:
 		}
 
 		inline bool IsEmpty() {
-			return sign == 0 && entry == NULL && time == (0, 0);
+			return sign == 0 && entry == NULL && time.sec == 0 && time.usec == 0;
 		}
 
 		inline bool Reset() {
