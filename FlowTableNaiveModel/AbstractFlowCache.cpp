@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "AbstractFlowCache.h"
 
-AbstractFlowCache::AbstractFlowCache(ULONG row, ULONG col) :ROW_NUM(row), COL_NUM(col),m_ulCurNum(0)
+template <class T>
+AbstractFlowCache<T>::AbstractFlowCache(ULONG row, ULONG col) :ROW_NUM(row), COL_NUM(col),m_ulCurNum(0)
 {
 	cacheTable = new CacheEntry * [row];
 	for (ULONG i = 0; i < row; i++)
@@ -12,7 +13,8 @@ AbstractFlowCache::AbstractFlowCache(ULONG row, ULONG col) :ROW_NUM(row), COL_NU
 	}
 }
 
-AbstractFlowCache::~AbstractFlowCache()
+template <class T>
+AbstractFlowCache<T>::~AbstractFlowCache()
 {
 	for (ULONG i = 0; i < ROW_NUM; i++)
 	{

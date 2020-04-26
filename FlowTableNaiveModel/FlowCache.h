@@ -6,6 +6,7 @@
 * 缓存抽象模板，定义所有缓存可操作方法
 * 所有OF缓存均应该实现该接口
 */
+template <class T>
 class FlowCache 
 {
 public:
@@ -13,26 +14,18 @@ public:
 	*	查找缓存
 	*	@arg1	流ID
 	*	@arg2	当前查询时间
-	*	@arg3	掩码索引
+	*	@arg3	缓存项
 	*	@return 操作次数
 	*/
-	virtual ULONG FindFlow(const FlowID&, const Time&, PFlow&) = 0;
+	virtual ULONG Find(const FlowID&, const Time&, T&) = 0;
 	/**
 	*	插入一条流到缓存
 	*	@arg1	流ID
 	*	@arg2	当前插入时间
-	*	@arg3	待插入流
+	*	@arg3	待插入缓存项
 	*	@return	操作次数
 	*/
-	virtual ULONG InsertFlow(const FlowID&, const Time&, PFlow) = 0;
-	/**
-	*	插入一条流到缓存
-	*	@arg1	流ID
-	*	@arg2	当前插入时间
-	*	@arg3	掩码索引/元组编号
-	*	@return	踢除次数
-	*/
-	virtual ULONG InsertIndex(const FlowID&, const Time&, ULONG) = 0;
+	virtual ULONG Insert(const FlowID&, const Time&, T*) = 0;
 	/**
 	*	超时扫描函数
 	*	@arg1	当前扫描时间

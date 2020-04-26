@@ -5,13 +5,14 @@
 /**
 *	缓存的抽象类
 */
-class AbstractFlowCache : public FlowCache
+template <class T>
+class AbstractFlowCache : public FlowCache<T>
 {
 protected:
 	//缓存项
 	typedef struct CacheEntry {
 		ULONG sign;		//连接签名
-		Flow* entry;	//流表项指针
+		T* entry;	//缓存项指针
 		Time time;		//最近访问包的时间
 
 		CacheEntry() :sign(0), entry(NULL), time(0, 0) {

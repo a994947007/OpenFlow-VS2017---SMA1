@@ -2,11 +2,13 @@
 #include "HashFunctions.h"
 #include "SegmentCache.h"
 
-SegmentCache::SegmentCache(ULONG row,ULONG col):AbstractFlowCache(row,col) {
+template <class T>
+SegmentCache<T>::SegmentCache(ULONG row,ULONG col,ULONG segNum,ULONG segSize):AbstractFlowCache(row,col),SEG_NUM(segNum),SEG_SIZE(segSize) {
 
 }
 
-ULONG SegmentCache::FindFlow(const FlowID& fid, const Time& t, PFlow& pFlow) {
+template <class T>
+ULONG SegmentCache<T>::FindFlow(const FlowID& fid, const Time& t, T & pFlow) {
 	ULONG len = 0;
 	UCHAR buf[FID_LEN];
 	((FlowID*)&fid)->ToData(buf);
@@ -33,8 +35,8 @@ ULONG SegmentCache::FindFlow(const FlowID& fid, const Time& t, PFlow& pFlow) {
 	return len;
 }
 
-
-ULONG SegmentCache::InsertFlow(const FlowID& fid, const Time& t, PFlow pFlow) {
+template <class T>
+ULONG SegmentCache<T>::InsertFlow(const FlowID& fid, const Time& t, T pFlow) {
 	ULONG len = 0;
 	UCHAR buf[FID_LEN];
 	((FlowID*)&fid)->ToData(buf);
